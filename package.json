@@ -1,0 +1,19 @@
+{
+    "name": "local_api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/app.js",
+    "scripts": {
+        "start": "node src/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@small-tech/jsdb": "github:small-tech/jsdb",
+        "express": "^4.17.1",
+        "uuid": "^8.3.2"
+    },
+    "type": "module"
+}

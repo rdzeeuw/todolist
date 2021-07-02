@@ -1,0 +1,81 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: lightcyan;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+h1 {
+    font-size: 3em;
+    margin: 1em;
+}
+
+.searchbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.searchbar {
+    width: 80%;
+    padding: .5em 1.5em;
+    margin-right: 1em;
+}
+
+.btn {
+    width: 30px;
+    padding: .5em;
+    cursor: pointer;
+}
+
+.list {
+    
+    width: 400px;
+    height: auto;
+    list-style-type: none;
+}
+
+.checkbox {
+    margin-right: .5em;
+}
+
+.task-item {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1em;
+    margin-left: -2.5em;
+    position: relative;
+}
+
+.task-item:nth-child(odd) {
+    background-color: aqua;
+}
+
+.task-item:nth-child(even) {
+    background-color: white;
+}
+
+/* //delete icon */
+.fa-trash-o {
+    position: absolute;
+    right: 1em;
+    font-size: 1.3em;
+    cursor: pointer;
+    
+}
+
+.crossed-out {
+    text-decoration: line-through;
+}
