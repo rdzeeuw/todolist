@@ -10,7 +10,6 @@ const getAllTasks = async () => {
         }
     })
     const data = await response.json();
-    // console.log(data);
     return data;
 }
 
@@ -56,29 +55,27 @@ const taskDone = async (taskId) => {
         } 
 }
 
-
-
-
-// const taskUndone = async (taskId) => {
-//     const body = {done: false};
+//PUT task is undone
+const taskUndone = async (taskId) => {
+    const body = {done: false};
     
-//     try{
-//         const res = await fetch(`http://localhost:3000/${taskId}`, {
-//         method: "PUT",
-//         body: JSON.stringify(body),
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         })
+    try{
+        const res = await fetch(`http://localhost:3000/${taskId}`, {
+        method: "PUT",
+        body: JSON.stringify(body),
+        headers: {
+            "Content-Type": "application/json",
+        },
+        })
 
-//         const data = await res.json();
+        const data = await res.json();
 
-//         console.log(data);
+        console.log(data);
         
-//     } catch(err) {
-//             console.error(err);
-//         } 
-// }
+    } catch(err) {
+            console.error(err);
+        } 
+}
 
     
 //DELETE
@@ -88,7 +85,6 @@ const deleteTask = async (taskId) => {
             method: "DELETE",
         });
         const data = await res.json();
-        console.log(data);
 
     } catch(err) {
             console.error(err);

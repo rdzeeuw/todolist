@@ -39,8 +39,12 @@ const addTaskToDom = function(task) {
     checkbox.addEventListener('change', () => {
         li.classList.toggle('crossed-out');
         if(checkbox.checked == true){
+            li.classList.add('crossed-out');
             taskDone(taskId);
-         } 
+         } else {
+            li.classList.remove('crossed-out');
+            taskUndone(taskId);
+         }
     });
 
     //eventlistener to delete task from list
@@ -55,13 +59,17 @@ addBtn.addEventListener('click', () => {
     let inputField = searchBar.value;
     
     if(inputField.trim().length > 0){
-        createNewTask();
+        showNewTask();
     }
 } );
 
+const showNewTask = async function() {
+    const newTask = await createNewTask();
+    addTaskToDom(newTask);
+}
 
-
-const showTasks = async function() {
+//
+const showAllTasks = async function() {
     //get tasks
     const tasks = await getAllTasks();
     console.log("task data: ");
@@ -71,4 +79,4 @@ const showTasks = async function() {
     tasks.map(task => addTaskToDom(task));
 }
 
-showTasks();
+showAllTasks();
